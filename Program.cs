@@ -1,9 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);// Inicialize a single instance of the web aplication builder class. Witch set up the configurations, services and web server
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();// Add MVC services to a conteiner with support to both controllers and views. It's alows the aplication to handle HTTP requests and handles HTML views.
 
-var app = builder.Build();
+var app = builder.Build();// Compile the application and create a web host that will run the application.
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -13,12 +13,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseRouting();
+app.UseHttpsRedirection(); // Redirect HTTP requests to HTTPS for security.
+app.UseRouting(); // Enable routing middleware to match incoming requests to endpoints.
 
-app.UseAuthorization();
+app.UseAuthorization();// Enable authorization middleware to enforce security policies.
 
-app.MapStaticAssets();
+app.MapStaticAssets();// Map static assets to be served directly from the wwwroot folder. Assets like CSS, JavaScript, and images can be served without going through the MVC pipeline.
 
 app.MapControllerRoute(
     name: "default",

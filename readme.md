@@ -87,5 +87,12 @@ The EF Core is an Object-Relational Mapper (ORM) for .NET applications. It provi
 
 There are two main approaches to using EF Core:
 1. **Code First**: In this approach, you define your data model using C# classes, and EF Core generates the database schema based on these classes. This allows for a more code-centric development experience, where the database structure evolves alongside the application code.
-2. **Database First**: In this approach, you start with an existing database and generate the C# classes based on the database schema. This is useful when working with legacy databases or when you want to leverage an existing database structure without having to define it in code. 
+2. **Database First**: In this approach, you start with an existing database and generate the C# classes based on the database schema. This is useful when working with legacy databases or when you want to leverage an existing database structure without having to define it in code.
 
+### Code First Approach Steps
+1. **Define the Model**: Create C# classes that represent the entities in your application. Each class corresponds to a table in the database.
+2. **Create a DbContext**: Create a class that inherits from `DbContext` and includes `DbSet<T>` properties for each entity type. This class serves as the main point of interaction with the database.
+3. **Package Installation**: Install the EF Core, EF Core Tools, and the specific database provider packages (e.g., Microsoft.EntityFrameworkCore.SqlServer) using NuGet.
+4. **Configure the appsettings**: Add the connection string to the `appsettings.json` file to specify how to connect to the database.
+5. **Configure the Program.cs**: In the `Program.cs` file, configure the services to include the DbContext and specify the database provider.
+6. **Create Migrations**: In the Package Manager Console or using the command line, run the `Add-Migration` command to create a migration that reflects the current model. Aftert that, run the `Update-Database` command to apply the migration and create the database schema.

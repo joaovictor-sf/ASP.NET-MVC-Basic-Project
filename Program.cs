@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using MyApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);// Inicialize a single instance of the web aplication builder class. Witch set up the configurations, services and web server
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();// Add MVC services to a conteiner with support to both controllers and views. It's alows the aplication to handle HTTP requests and handles HTML views.
+builder.Services.AddDbContext<MyAppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));// Add the DbContext service to the container, configuring it to use SQL Server with a connection string from the configuration.
 
 var app = builder.Build();// Compile the application and create a web host that will run the application.
 

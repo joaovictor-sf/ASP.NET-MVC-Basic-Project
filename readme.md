@@ -96,3 +96,7 @@ There are two main approaches to using EF Core:
 4. **Configure the appsettings**: Add the connection string to the `appsettings.json` file to specify how to connect to the database.
 5. **Configure the Program.cs**: In the `Program.cs` file, configure the services to include the DbContext and specify the database provider.
 6. **Create Migrations**: In the Package Manager Console or using the command line, run the `Add-Migration` command to create a migration that reflects the current model. Aftert that, run the `Update-Database` command to apply the migration and create the database schema.
+
+### Database First Approach Steps
+1. **Package Installation**: Install the EF Core, EF Core Tools, and the specific database provider packages (e.g., Microsoft.EntityFrameworkCore.SqlServer) using NuGet.
+**Learn more about later**

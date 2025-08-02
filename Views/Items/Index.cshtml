@@ -1,6 +1,26 @@
-﻿@model MyApp.Models.Item
+﻿@model List<MyApp.Models.Item>
 @{
     ViewData["Title"] = "Items";
 }
 
-<p>This is the name of the item @Model.Name </p>
+<h3>Home Page</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price.ToString("N2")</td>
+                @*<td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>*@
+            </tr>
+        }
+    </tbody>
+</table>

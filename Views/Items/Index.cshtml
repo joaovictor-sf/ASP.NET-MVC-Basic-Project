@@ -17,10 +17,17 @@
         {
             <tr>
                 <td>@item.Name</td>
-                <td>@item.Price.ToString("N2")</td>
-                @*<td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
-                <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>*@
+                <td>@item.Price.ToString("N2") $</td>
+                <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <a asp-action="Create" class="btn btn-primary">Create New Item</a>
+            </td>
+        </tr>
+    </tfoot>
 </table>

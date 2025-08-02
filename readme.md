@@ -1,4 +1,6 @@
 ﻿# Obervations
+Interessante: ctrl + k + c -> coment selected lines
+ctrl + k + u -> uncomment selected lines
 
 ## Organization of the View
 ### _ViewImports

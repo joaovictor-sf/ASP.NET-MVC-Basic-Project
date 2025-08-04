@@ -12,7 +12,7 @@ namespace MyApp.Controllers {
         }
 
         public async Task<IActionResult> Index() {
-            var items = await _context.Items.ToListAsync(); // Retrieve all items from the database
+            var items = await _context.Items.Include(s => s.SerialNumber).ToListAsync(); // Retrieve all items from the database
             //When retrieving data from the database, it is a good practice to use asynchronous methods to avoid blocking the main thread.
             return View(items);
         }
